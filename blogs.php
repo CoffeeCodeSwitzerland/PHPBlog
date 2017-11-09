@@ -10,15 +10,14 @@
   //var_dump($blogs);
   foreach ($blogs as $blog)
   {
-      echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
-      echo "<div class='container' style='margin-top:80px'>
+      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><div class='container' style='margin-top:80px'>
       	<div class='card text-white bg-primary mb-3' style='max-width: 20rem;'>
       		<div class='card-header'>".$blog['name']."</div>
       		<div class='card-body'>
       			<h4 class='card-title'>".$blog['name']."</h4>
       			<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       		</div>
-      	</div>";
+      	</div></a>";
   }
 ?>
 
