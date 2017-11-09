@@ -55,7 +55,7 @@
 	</div>
 </nav>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Blog</a>
+  <h1>Blog</h1>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -64,7 +64,7 @@
       <?php
   		  echo "<a class='nav-item nav-link active' href='index.php?function=login&bid=$blogId'>Login</a>";
   		  echo "<a class='nav-item nav-link active'href='index.php?function=blogs&bid=$blogId'>Blog wählen</a>";
-  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_login&bid=$blogId'>Beiträge anzeigen</a>";
+  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a>";
   		?>
     </div>
   </div>
