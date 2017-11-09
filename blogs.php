@@ -10,7 +10,15 @@
   //var_dump($blogs);
   foreach ($blogs as $blog)
   {
-    echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+      echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+      echo "<div class='container' style='margin-top:80px'>
+      	<div class='card text-white bg-primary mb-3' style='max-width: 20rem;'>
+      		<div class='card-header'>".$blog['name']."</div>
+      		<div class='card-body'>
+      			<h4 class='card-title'>".$blog['name']."</h4>
+      			<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      		</div>
+      	</div>";
   }
 ?>
 
@@ -32,7 +40,7 @@
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		</div>
 	</div>
-	<div><a href='index.php?function=blogs&bid=4' title='Blog auswählen'><h4>Anna Abegglen</h4></a></div>
+<!--	<div><a href='index.php?function=blogs&bid=4' title='Blog auswählen'><h4>Anna Abegglen</h4></a></div>
 	<div><a href='index.php?function=blogs&bid=2' title='Blog auswählen'><h4>Hans Hinterseer</h4></a></div>
 	<div><a href='index.php?function=blogs&bid=1' title='Blog auswählen'><h4>Marc Muster</h4></a></div>
-	<div><a href='index.php?function=blogs&bid=3' title='Blog auswählen'><h4>Sonja Sauser</h4></a></div>
+	<div><a href='index.php?function=blogs&bid=3' title='Blog auswählen'><h4>Sonja Sauser</h4></a></div> -->
