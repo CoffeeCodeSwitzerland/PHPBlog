@@ -6,6 +6,12 @@
   // Hier Code....
 
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blogs und der Ausgabe mit PHP ersetzt werden
+  $blogs = getUserNames();
+  //var_dump($blogs);
+  foreach ($blogs as $blog)
+  {
+    echo "<div><a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><h4>".$blog['name']."</h4></a></div>";
+  }
 ?>
 
 <div class="jumbotron">
