@@ -8,10 +8,18 @@
   {
     echo "<div class='container' style='margin-top:80px;display:inline;'>
       <div class='card text-black mb-3' style='max-width: 20rem;'>
-        <a href='index.php?function=blogs&bid=".$blogId."' title='Blog auswählen'><div class='card-header'>".$entry['title']."</div></a>
+        <a href='index.php?function=entries_public&bid=".$blogId."&eid=".$entry['eid']."' title='Blog auswählen'><div class='card-header'>".$entry['title']."</div></a>
         <div class='card-body'>
           <p class='card-text'>".substr($entry['content'],0,20)."....</p>
         </div>
       </div>";
+  }
+
+  foreach($blogEntries as $entry)
+  {
+    if($entry['eid'] == $entryId)
+    {
+      echo $entry['content'];
+    }
   }
 ?>

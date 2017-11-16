@@ -14,6 +14,9 @@
   // Prüfung, ob bereits ein Blog ausgewählt worden ist
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
+  // Prüfung, ob bereits ein Eintrag ausgewählt worden ist
+  if (isset($_GET['eid'])) $entryId = $_GET['eid'];
+  else $entryId = 0;
 ?>
 <!DOCTYPE html>
 <html lang="de">
