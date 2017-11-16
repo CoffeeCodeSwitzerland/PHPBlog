@@ -13,11 +13,13 @@
   foreach($blogEntries as $entry)
   {
     echo "<div class='card' style='width: 20rem;'>
+      <a href='index.php?function=entries_public&bid=".$blogId."&eid=".$entry['eid']."' title='Blog auswählen'>
       <div class='card-body'>
-        <h4 class='card-title'></h4>
-        <a href='index.php?function=entries_public&bid=".$blogId."&eid=".$entry['eid']."' title='Blog auswählen'><div class='card-header'>".$entry['title']."</div></a>
+        <h4 class='card-title'>" .$entry['datetime']. "</h4>
+        <div class='card-header'>".$entry['title']."</div>
       </div>
-    </div>";
+    </div>
+    </a>";
   }
   echo "</div>";
   echo "<div class='col'>";
