@@ -17,13 +17,6 @@
   // Prüfung, ob bereits ein Eintrag ausgewählt worden ist
   if (isset($_GET['eid'])) $entryId = $_GET['eid'];
   else $entryId = 0;
-
-  if(isset($_GET['logout']) && $_GET['logout'] == true)
-  {
-    session_destroy();
-    $url = $_SERVER['PHP_SELF']."?function=login";
-    echo "<script>window.location = '$url'</script>";
-  }
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -76,7 +69,7 @@
       {
         echo "<a class='nav-item nav-link active'href='index.php?function=entries_public&bid=".getUserIdFromSession('uid')."'>Beiträge anzeigen</a>";
   		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_public&bid=".getUserIdFromSession('uid')."'>Beiträge hinzufügen</a>";
-        echo "<a class='nav-item nav-link active' href='index.php?function=login&bid=".getUserIdFromSession('uid')."&logout=true'>Logout</a>";
+        echo "<a class='nav-item nav-link active' href='index.php?function=logout&bid=".getUserIdFromSession('uid')."'>Logout</a>";
       } else {
   		  echo "<a class='nav-item nav-link active' href='index.php?function=login&bid=$blogId'>Login</a>";
   		  echo "<a class='nav-item nav-link active'href='index.php?function=blogs&bid=$blogId'>Blog wählen</a>";
