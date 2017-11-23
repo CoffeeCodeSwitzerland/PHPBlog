@@ -67,7 +67,7 @@
       <?php
       if(getUserIdFromSession() != 0)
       {
-        echo "<a class='nav-item nav-link active'href='index.php?function=entries_public&bid=".getUserIdFromSession('uid')."'>Beiträge anzeigen</a>";
+        echo "<a class='nav-item nav-link active'href='index.php?function=entries_member&bid=".getUserIdFromSession('uid')."'>Beiträge anzeigen</a>";
   		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_public&bid=".getUserIdFromSession('uid')."'>Beiträge hinzufügen</a>";
         echo "<a class='nav-item nav-link active' href='index.php?function=logout&bid=".getUserIdFromSession('uid')."'>Logout</a>";
       } else {
