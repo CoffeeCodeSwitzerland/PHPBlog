@@ -31,7 +31,7 @@
     }
   }
 ?>
-
+<!--
 <div class="jumbotron">
   <h1 class="display-3">Hello, world!</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -49,7 +49,7 @@
 			<h4 class="card-title">Primary card title</h4>
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		</div>
-	</div>
+	</div>-->
 <!--	<div><a href='index.php?function=blogs&bid=4' title='Blog auswählen'><h4>Anna Abegglen</h4></a></div>
 	<div><a href='index.php?function=blogs&bid=2' title='Blog auswählen'><h4>Hans Hinterseer</h4></a></div>
 	<div><a href='index.php?function=blogs&bid=1' title='Blog auswählen'><h4>Marc Muster</h4></a></div>

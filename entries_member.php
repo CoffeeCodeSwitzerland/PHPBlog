@@ -7,6 +7,7 @@
   $col1 = "";
   $col2 = "";
 
+  echo "<h1>Willkommen im Memberbereich!</h1><br>"
   echo "<div class='container'>";
   echo "<div class='row'>";
   echo "<div class='col'>";

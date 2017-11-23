@@ -17,6 +17,23 @@
   if(isset($_POST['passwort'])) $passwort = $_POST['passwort'];
   if(isset($_POST['email'])) $email = $_POST['email'];
 
+  $uid = getUserIdFromDb($email,$passwort);
+
+  if($uid > 0)
+  {
+    $_SESSION['uid'] = $uid;
+  }
+
+  if($uid > 0)
+  {
+    $meldung = "<h1 style='color:darkgreen;'>Willkommen im Memberbereich!</h1><br>";
+  } else {
+    if( !empty($_POST) ) {
+    $meldung = "<h1 style='color:red;'>Fehler!</h1><br>";
+    }
+  }
+
+  /*
   if(userExists($email))
   {
     $user = getUserByEmail($email);
@@ -28,7 +45,7 @@
     else {
       $meldung = "Fehler";
     }
-  }
+  }*/
 
   echo $meldung;
 
