@@ -28,7 +28,7 @@
   {
     if($entry['eid'] == $entryId)
     {
-      echo $entry['content'];
+      echo nl2br($entry['content']);
     }
   }
 

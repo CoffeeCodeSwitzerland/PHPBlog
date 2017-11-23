@@ -9,7 +9,6 @@
 // Wenn Formular gesendet worden ist, die Login-Daten aber nicht korrekt sind:
 // Unten auf der Seite Anzeige der Fehlermeldung.
 
-  $meldung = "";
   $email = "";
   $passwort = "";
   $user = [];
@@ -26,10 +25,11 @@
 
   if($uid > 0)
   {
-    $meldung = "<h1 style='color:darkgreen;'>Willkommen im Memberbereich!</h1><br>";
+    $url = $_SERVER['PHP_SELF']."?function=entries_member";
+    echo "<script>window.location = '$url'</script>";
   } else {
     if( !empty($_POST) ) {
-    $meldung = "<h1 style='color:red;'>Fehler!</h1><br>";
+      echo "<h1 style='color:red;'>Fehler!</h1><br>";
     }
   }
 
@@ -46,9 +46,6 @@
       $meldung = "Fehler";
     }
   }*/
-
-  echo $meldung;
-
 ?>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=login"; ?>">
   <label for="email">Benutzername</label>
