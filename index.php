@@ -67,9 +67,9 @@
       <?php
       if(getUserIdFromSession() != 0)
       {
-        echo "<a class='nav-item nav-link active'href='index.php?function=entries_member&bid=".getUserIdFromSession('uid')."'>Beiträge anzeigen</a>";
-  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_member&bid=".getUserIdFromSession('uid')."'>Beiträge hinzufügen</a>";
-        echo "<a class='nav-item nav-link active' href='index.php?function=logout&bid=".getUserIdFromSession('uid')."'>Logout</a>";
+        echo "<a class='nav-item nav-link active'href='index.php?function=entries_member'>Beiträge anzeigen</a>";
+  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_add'>Beiträge hinzufügen</a>";
+        echo "<a class='nav-item nav-link active' href='index.php?function=logout'>Logout</a>";
       } else {
   		  echo "<a class='nav-item nav-link active' href='index.php?function=login&bid=$blogId'>Login</a>";
   		  echo "<a class='nav-item nav-link active'href='index.php?function=blogs&bid=$blogId'>Blog wählen</a>";
