@@ -58,7 +58,7 @@
 	</div>
 </nav>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <h1>Blog <?php if(getUserIdFromSession() != 0) echo "von ".getUserName(getUserIdFromSession()); ?></h1>
+  <h1>Blog<?php if(getUserIdFromSession() != 0) echo " von ".getUserName(getUserIdFromSession()); ?></h1>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -68,7 +68,7 @@
       if(getUserIdFromSession() != 0)
       {
         echo "<a class='nav-item nav-link active'href='index.php?function=entries_member&bid=".getUserIdFromSession('uid')."'>Beiträge anzeigen</a>";
-  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_public&bid=".getUserIdFromSession('uid')."'>Beiträge hinzufügen</a>";
+  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_member&bid=".getUserIdFromSession('uid')."'>Beiträge hinzufügen</a>";
         echo "<a class='nav-item nav-link active' href='index.php?function=logout&bid=".getUserIdFromSession('uid')."'>Logout</a>";
       } else {
   		  echo "<a class='nav-item nav-link active' href='index.php?function=login&bid=$blogId'>Login</a>";
