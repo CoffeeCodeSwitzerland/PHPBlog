@@ -25,7 +25,7 @@
 
   if($uid > 0)
   {
-    $url = $_SERVER['PHP_SELF']."?function=entries_member";
+    $url = $_SERVER['PHP_SELF']."?function=entries_member&bid=".$uid;
     echo "<script>window.location = '$url'</script>";
   } else {
     if( !empty($_POST) ) {
