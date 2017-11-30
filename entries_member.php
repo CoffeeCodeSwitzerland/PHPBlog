@@ -29,7 +29,10 @@
   {
     if($entry['eid'] == $entryId)
     {
-      echo $entry['content'];
+      echo "<div class='container'>";
+      echo "<a href=".$_SERVER['PHP_SELF']."?function=entries_modify&eid=". $entryId ."><h2>".$entry['title']."</h2></a>";
+      echo nl2br($entry['content']);
+      echo "</div>";
     }
   }
 
