@@ -1,5 +1,4 @@
 <?php
-
   if(getUserIdFromSession() != 0)
   {
     deleteEntry($_GET['eid']);
