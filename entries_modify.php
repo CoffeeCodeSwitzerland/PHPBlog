@@ -23,7 +23,7 @@
 
       echo " <div class='form-group'>
         <label for='exampleFormControlTextarea1'>Beitrag</label>
-        <textarea class='form-control' id='exampleFormControlTextarea1' name='content' rows='3'>".$entry['content']."</textarea>
+        <textarea class='form-control' id='exampleFormControlTextarea1' name='content' rows='15'>".$entry['content']."</textarea>
       </div>";
       echo "<button type='submit' class='btn btn-primary'>Anpassen</button>";
       echo "</form>";
