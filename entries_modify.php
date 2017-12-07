@@ -26,9 +26,9 @@
         <textarea class='form-control' id='exampleFormControlTextarea1' name='content' rows='3'>".$entry['content']."</textarea>
       </div>";
       echo "<button type='submit' class='btn btn-primary'>Anpassen</button>";
-      echo "<button onclick='location.href='".$_SERVER['PHP_SELF']."?function=entries_remove&eid=".$eid."'' class='btn btn-primary'>Entfernen</button>";
-      echo "<button onclick='location.href='".$_SERVER['PHP_SELF']."?function=entries_member'' class='btn btn-primary'>Abbrechen</button>";
       echo "</form>";
+      echo "<button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_remove&eid=".$eid."\"' class='btn btn-primary'>Entfernen</button>";
+      echo "<button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_member\"' class='btn btn-primary'>Abbrechen</button>";
       echo "</div>";
   }
 
