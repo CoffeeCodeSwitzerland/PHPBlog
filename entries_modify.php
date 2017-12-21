@@ -1,10 +1,18 @@
 <?php
 
+if(getUserIdFromSession() != 0)
+{
   if(!empty($_POST))
   {
-    updateEntry($_GET['eid'], $_POST['title'], $_POST['content']);
-    $url = $_SERVER['PHP_SELF']."?function=entries_member";
-    echo "<script>window.location = '$url'</script>";
+    if(strlen(trim($_POST['title'])) != 0 && strlen(trim($_POST['content']))!= 0)
+    {
+      updateEntry($_GET['eid'], $_POST['title'], $_POST['content']);
+      $url = $_SERVER['PHP_SELF']."?function=entries_member";
+      echo "<script>window.location = '$url'</script>";
+    } else
+    {
+      echo "<h1 style='color:red;'>Fehler!\n Titel und/oder Inhalt ist leer.</h1><br>";
+    }
   }
 
   if(isset($_GET['eid']))
@@ -12,6 +20,8 @@
     $eid = $_GET['eid'];
     $entry = getEntry($eid);
 
+    if($entry != "")
+    {
     echo "<div class='container'>";
       echo "<form action='" . $_SERVER['PHP_SELF']. "?function=entries_modify&eid=".$eid."' method='POST'>";
 
@@ -30,6 +40,10 @@
       echo "<button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_remove&eid=".$eid."\"' class='btn btn-primary'>Entfernen</button>";
       echo "<button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_member\"' class='btn btn-primary'>Abbrechen</button>";
       echo "</div>";
+    } else {
+      echo "<h1 style='color:red;'>Fehler!\n Dieser Beitrag existiert nicht.</h1><br>";
+    }
   }
+}
 
 ?>
