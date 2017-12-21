@@ -47,16 +47,17 @@
     }
   }*/
 ?>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']."?function=login"; ?>">
-  <label for="email">Benutzername</label>
-  <div>
-	<input type="email" id="email" name="email" placeholder="E-Mail" value="" />
+<div class='container'>
+  <h2>Bitte melden sie sich an</h2>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" style="width:40%" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
-  <label for="passwort">Passwort</label>
-  <div>
-	<input type="password" id="passwort" name="passwort" placeholder="Passwort" value="" />
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" style="width:40%" placeholder="Password">
   </div>
-  <div>
-	<button type="submit">senden</button>
-  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
