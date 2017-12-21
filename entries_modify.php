@@ -37,8 +37,28 @@ if(getUserIdFromSession() != 0)
       </div>";
       echo "<button type='submit' class='btn btn-primary'>Anpassen</button>";
       echo "</form>";
-      echo "<button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_remove&eid=".$eid."\"' class='btn btn-primary'>Entfernen</button>";
+      echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Entfernen</button>";
       echo "<button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_member\"' class='btn btn-primary'>Abbrechen</button>";
+      echo "<!-- Modal -->
+            <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+              <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h5 class='modal-title' id='exampleModalLabel'>Entfernen bestätigen</h5>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                      <span aria-hidden='true'>&times;</span>
+                    </button>
+                  </div>
+                  <div class='modal-body'>
+                    Wollen Sie den Eintrag wirklich entfernen?
+                  </div>
+                  <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Abbrechen</button>
+                    <button onclick='location.href=\"".$_SERVER['PHP_SELF']."?function=entries_remove&eid=".$eid."\"' class='btn btn-primary'>Entfernen</button>
+                  </div>
+                </div>
+              </div>
+            </div>";
       echo "</div>";
     } else {
       echo "<h1 style='color:red;'>Fehler!\n Dieser Beitrag existiert nicht.</h1><br>";
