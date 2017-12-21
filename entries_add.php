@@ -1,10 +1,17 @@
 <?php
-
+if(getUserIdFromSession() != 0)
+{
   if(!empty($_POST))
   {
-    addEntry(getUserIdFromSession(), $_POST['title'], $_POST['content']);
-    $url = $_SERVER['PHP_SELF']."?function=entries_member";
-    echo "<script>window.location = '$url'</script>";
+    if(strlen(trim($_POST['title']))!=0 && strlen(trim($_POST['content']))!=0)
+    {
+      addEntry(getUserIdFromSession(), $_POST['title'], $_POST['content']);
+      $url = $_SERVER['PHP_SELF']."?function=entries_member";
+      echo "<script>window.location = '$url'</script>";
+    } else
+    {
+      echo "<h1 style='color:red;'>Fehler!\n Titel und/oder Inhalt ist leer.</h1><br>";
+    }
   }
 
 echo "<div class='container'>";
@@ -23,4 +30,5 @@ echo "<div class='container'>";
   echo "<button type='submit' class='btn btn-primary'>Erstellen</button>";
   echo "</form>";
   echo "</div>";
+}
 ?>
