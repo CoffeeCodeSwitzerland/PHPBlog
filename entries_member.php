@@ -18,6 +18,7 @@
       <div class='card-body'>
         <h4 class='card-title'>" . date( 'Y-m-d H:i:s', $entry['datetime'] ). "</h4>
         <div class='card-header'>".$entry['title']."</div>
+        <p class='card-text'>" . substr($entry['content'], 0, 25) . "...</p>
       </div>
     </div>
     </a>";

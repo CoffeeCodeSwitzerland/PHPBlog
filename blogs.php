@@ -12,8 +12,8 @@
   {
     if($blog['uid'] == $blogId)
     {
-      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><div class='container' style='margin-top:80px;display:inline;'>
-      	<div class='card text-white bg-primary mb-3' style='max-width: 20rem;'>
+      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen' style='color:white;'><div class='container' style='margin-top:80px;display:inline;'>
+      	<div class='card text-white bg-dark mb-3'  style='width:40rem;height:15rem;margin-bottom:2rem;'>
       		<div class='card-header'>".$blog['name']."</div>
       		<div class='card-body'>
       			<p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
@@ -21,8 +21,8 @@
       	</div></a>";
     } else
     {
-      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen'><div class='container' style='margin-top:80px;display:inline;'>
-      	<div class='card text-black mb-3' style='max-width: 20rem;'>
+      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen' style='color:black;'><div class='container' style='margin-top:80px;display:inline;'>
+      	<div class='card text-black mb-3'  style='width:40rem;height:15rem;margin-bottom:2rem;'>
       		<div class='card-header'>".$blog['name']."</div>
       		<div class='card-body'>
       			<p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
