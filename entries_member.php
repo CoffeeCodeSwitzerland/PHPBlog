@@ -8,12 +8,12 @@
   $col2 = "";
 
   // echo "<h1>Willkommen im Memberbereich!</h1><br>";
-  echo "<div class='container'>";
+  echo "<div class='container' style='margin:0;'>";
   echo "<div class='row'>";
   echo "<div class='col'>";
   foreach($blogEntries as $entry)
   {
-    echo "<div class='card' style='width: 20rem;'>
+    echo "<div class='card' style='width:40rem;height:15rem;margin-bottom:2rem;'>
       <a href='index.php?function=entries_member&eid=".$entry['eid']."' title='Blog auswählen' style='color:black;text-decoration:none;'>
       <div class='card-body'>
         <h4 class='card-title'>" . date( 'Y-m-d H:i:s', $entry['datetime'] ). "</h4>
@@ -29,9 +29,9 @@
   {
     if($entry['eid'] == $entryId)
     {
-      echo "<div class='container'>";
+      echo "<div class='container text'>";
       echo "<a href=".$_SERVER['PHP_SELF']."?function=entries_modify&eid=". $entryId ."><h2>".$entry['title']."</h2></a>";
-      echo nl2br($entry['content']);
+      echo "<p>" . nl2br($entry['content']) . "</p>";
       echo "</div>";
     }
   }
