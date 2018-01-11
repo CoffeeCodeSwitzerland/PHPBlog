@@ -5,6 +5,7 @@ if(getUserIdFromSession() != 0) {
         deleteComment($cid);
         $url = $_SERVER['PHP_SELF'] . "?function=entries_member&eid=" . $entryId;
         echo "<script>window.location = '$url'</script>";
-    } 
+//        asdf
+    }
 }
 ?>
