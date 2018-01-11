@@ -1,5 +1,6 @@
 body{
    font-size:1.5vw;
+   padding-bottom: 5vw;
 }
 
 .form-control{
@@ -25,4 +26,13 @@ p{
 
 container{
   padding-right: 0px;
+}
+
+h3  {
+  font-size:2vw;
+}
+
+h4   {
+  font-size:1.2vw;
+  margin-bottom: 5%;
 }
