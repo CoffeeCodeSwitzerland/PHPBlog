@@ -1,4 +1,4 @@
-<?php
+    <?php
   // Alle Blogs bzw. Benutzernamen holen und falls Blog bereits ausgewählt, entsprechenden Namen markieren
   // Hier Code....
 
@@ -8,21 +8,26 @@
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blogs und der Ausgabe mit PHP ersetzt werden
   $blogs = getUserNames();
   //var_dump($blogs);
+    ?>
+    <div class="container">
+    <?php
+
   foreach ($blogs as $blog)
   {
     if($blog['uid'] == $blogId)
     {
       echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen' style='color:white;'><div class='container' style='margin-top:80px;display:inline;'>
-      	<div class='card text-white bg-dark mb-3'  style='width:40rem;height:15rem;margin-bottom:2rem;'>
-      		<div class='card-header'>".$blog['name']."</div>
-      		<div class='card-body'>
-      			<p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
-      		</div>
-      	</div></a>";
+                <div class='card text-white bg-dark mb-3'  style='width:40rem;height:15rem;margin: 2rem;float: left;'>
+      		        <div class='card-header'>".$blog['name']."</div>
+      		        <div class='card-body'>
+      			        <p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
+      		        </div>
+      	        </div>
+      	    </a>";
     } else
     {
       echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen' style='color:black;'><div class='container' style='margin-top:80px;display:inline;'>
-      	<div class='card text-black mb-3'  style='width:40rem;height:15rem;margin-bottom:2rem;'>
+      	<div class='card text-black mb-3'  style='width:40rem;height:15rem;margin:2rem;float: left;'>
       		<div class='card-header'>".$blog['name']."</div>
       		<div class='card-body'>
       			<p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
@@ -31,6 +36,7 @@
     }
   }
 ?>
+    </div>
 <!--
 <div class="jumbotron">
   <h1 class="display-3">Hello, world!</h1>
