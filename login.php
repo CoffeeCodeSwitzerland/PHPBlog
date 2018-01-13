@@ -25,8 +25,14 @@
 
   if($uid > 0)
   {
-    $url = $_SERVER['PHP_SELF']."?function=entries_member&bid=".$uid;
-    echo "<script>window.location = '$url'</script>";
+      $user = getUserByEmail($email);
+      if($user['role'] == 2) {
+          $url = $_SERVER['PHP_SELF'] . "?function=admin_blogs&bid=1";
+          echo "<script>window.location = '$url'</script>";
+      } else {
+          $url = $_SERVER['PHP_SELF'] . "?function=entries_member&bid=" . $uid;
+          echo "<script>window.location = '$url'</script>";
+      }
   } else {
     if( !empty($_POST) ) {
       echo "<h1 style='color:red;'>Fehler!</h1><br>";

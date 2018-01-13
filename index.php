@@ -17,6 +17,18 @@
   // Prüfung, ob bereits ein Eintrag ausgewählt worden ist
   if (isset($_GET['eid'])) $entryId = $_GET['eid'];
   else $entryId = 0;
+
+  if(!isset($_SESSION['isAdmin'])) {
+      $currentUser = getCurrentUser();
+      if ($currentUser != "") {
+          if ($currentUser['role'] == 2) {
+              echo "<script>window.alert('You are now entering in the admin part of the blog \\nBE WARE OF YOU DOING');</script>";
+              $_SESSION['isAdmin'] = "true";
+          } else {
+              $_SESSION['isAdmin'] = "false";
+          }
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -51,15 +63,27 @@
       </div>
       <ul class="nav navbar-nav">
 		<?php
-		  echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
-		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
-		  echo "<li><a href='index.php?function=entries_login&bid=$blogId'>Beiträge anzeigen</a></li>";
+            echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
+            echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
+            echo "<li><a href='index.php?function=entries_login&bid=$blogId'>Beiträge anzeigen</a></li>";
 		?>
       </ul>
 	</div>
 </nav>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <h1>Blog<?php if(getUserIdFromSession() != 0) echo " von ".getUserName(getUserIdFromSession()); ?></h1>
+  <h1><?php
+                if(getUserIdFromSession() != 0) {
+                    if($_SESSION['isAdmin'] == "true") {
+                        echo "Administration";
+                    }
+                    else{
+                        echo "Blog von " . getUserName(getUserIdFromSession());
+                    }
+                }else{
+                    echo "Blog";
+                }
+            ?>
+  </h1>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -68,8 +92,14 @@
       <?php
       if(getUserIdFromSession() != 0)
       {
-        echo "<a class='nav-item nav-link active'href='index.php?function=entries_member'>Beiträge anzeigen</a>";
-  		  echo "<a class='nav-item nav-link active'href='index.php?function=entries_add'>Beiträge hinzufügen</a>";
+        if($_SESSION['isAdmin'] == "true"){
+            echo "<a class='nav-item nav-link active'href='index.php?function=admin_blogs'>Benutzerblogs</a>";
+            echo "<a class='nav-item nav-link active'href='index.php?function=admin_users'>Benuzterverwaltung</a>";
+
+        } else {
+            echo "<a class='nav-item nav-link active'href='index.php?function=entries_member'>Beiträge anzeigen</a>";
+            echo "<a class='nav-item nav-link active'href='index.php?function=entries_add'>Beiträge hinzufügen</a>";
+        }
         echo "<a class='nav-item nav-link active' href='index.php?function=logout'>Logout</a>";
       } else {
   		  echo "<a class='nav-item nav-link active' href='index.php?function=login&bid=$blogId'>Login</a>";

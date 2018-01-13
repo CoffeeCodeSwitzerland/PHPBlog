@@ -14,26 +14,26 @@
 
   foreach ($blogs as $blog)
   {
-    if($blog['uid'] == $blogId)
-    {
-      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen' style='color:white;'><div class='container' style='margin-top:80px;display:inline;'>
+      if($blog['name'] != 'admin' && $blog['name'] != 'name') {
+          if ($blog['uid'] == $blogId) {
+              echo "<a href='index.php?function=blogs&bid=" . $blog['uid'] . "' title='Blog auswählen' style='color:white;'><div class='container' style='margin-top:80px;display:inline;'>
                 <div class='card text-white bg-dark mb-3'  style='width:40rem;height:15rem;margin: 2rem;float: left;'>
-      		        <div class='card-header'>".$blog['name']."</div>
+      		        <div class='card-header'>" . $blog['name'] . "</div>
       		        <div class='card-body'>
-      			        <p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
+      			        <p class='card-text'>Dies ist der Blog von " . $blog['name'] . "</p>
       		        </div>
       	        </div>
       	    </a>";
-    } else
-    {
-      echo "<a href='index.php?function=blogs&bid=".$blog['uid']."' title='Blog auswählen' style='color:black;'><div class='container' style='margin-top:80px;display:inline;'>
+          } else {
+              echo "<a href='index.php?function=blogs&bid=" . $blog['uid'] . "' title='Blog auswählen' style='color:black;'><div class='container' style='margin-top:80px;display:inline;'>
       	<div class='card text-black mb-3'  style='width:40rem;height:15rem;margin:2rem;float: left;'>
-      		<div class='card-header'>".$blog['name']."</div>
+      		<div class='card-header'>" . $blog['name'] . "</div>
       		<div class='card-body'>
-      			<p class='card-text'>Dies ist der Blog von ".$blog['name']."</p>
+      			<p class='card-text'>Dies ist der Blog von " . $blog['name'] . "</p>
       		</div>
       	</div></a>";
-    }
+          }
+      }
   }
 ?>
     </div>
