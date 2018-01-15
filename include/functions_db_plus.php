@@ -43,7 +43,7 @@
   function getUsers() {
 	$alle = [];
 	$db = getValue('cfg_db');
-	$users = $db->query("SELECT uid, name, email, password FROM user ORDER BY name, email");
+	$users = $db->query("SELECT uid, name, email, password FROM user WHERE uid > 0 ORDER BY name, email");
 	while ($user = $users->fetchArray()) {
 	  $alle[] = $user;
 	}

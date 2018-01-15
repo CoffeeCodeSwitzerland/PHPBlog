@@ -1,19 +1,14 @@
 <?php
-
-function debug_to_console( $data ) {
-    $output = $data;
-    if ( is_array( $output ) )
-        $output = implode( ',', $output);
-
-    echo "<script>console.log( 'Users: " . $output . "' );</script>";
-}
-
   $myfile = fopen("exchange/export.csv", "w") or die("Unable to open file!");
-
-  $users = getUserNames();
+  $written = false;
+  $users = getUsers();
   foreach($users as $user){
-    $entry = $user[1].";".$user[2];
+    $entry = $user[1].";".$user[2].";".$user[3];
     fwrite($myfile, $entry."\n");
+    $written = true;
   }
   fclose($myfile);
+  if($written){
+    echo "Benutzer wurden aus der Datenbank in die Datei 'exchange/export.csv' geschrieben.";
+  }
 ?>
