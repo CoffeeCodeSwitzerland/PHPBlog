@@ -22,7 +22,6 @@ function userExistsByUid($uid){
     else return false;
 }
 
-<<<<<<< HEAD
   /************************************************************************************************
    getUsers: Liefert alle registrierten Benutzer zurück
    Hinweis:	 Diese Funktion kann dazu benutzt werden, alle Benutzer in eine Textdatei zu exportieren
@@ -44,7 +43,7 @@ function userExistsByUid($uid){
 	}
 	return $alle;
   }
-=======
+
 function getUserByEmail($email)
 {
     $db = getValue('cfg_db');
@@ -56,30 +55,7 @@ function getUserByEmail($email)
         return 0;
     }
 }
->>>>>>> d8559a544dec2ebb43a051fd1fea05a7525feeba
 
-/************************************************************************************************
- * getUsers: Liefert alle registrierten Benutzer zurück
- * Hinweis:     Diese Funktion kann dazu benutzt werden, alle Benutzer in eine Textdatei zu exportieren
- * Rückgabe: 2-dimensionales Array,
- * - 1. Dimension = Benutzer
- * - 2. Dimension = Attribute des Benutzers
- * User-ID
- * Name, falls vorhanden (NULL-Wert möglich)
- * Mailadresse
- * md5-verschlüsseltes Passwort
- * Sortierung:     1. nach Name und 2. nach Mailadresse
- ************************************************************************************************/
-function getUsers()
-{
-    $alle = [];
-    $db = getValue('cfg_db');
-    $users = $db->query("SELECT uid, name, email, password FROM user ORDER BY name, email");
-    while ($user = $users->fetchArray()) {
-        $alle[] = $user;
-    }
-    return $alle;
-}
 
 /************************************************************************************************
  * addUser:      Schreibt einen neuen Benutzer in die Datenbank
