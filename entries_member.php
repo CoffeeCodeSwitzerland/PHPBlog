@@ -4,7 +4,10 @@
 
 // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 $blogEntries = getEntries(getUserIdFromSession());
-$comments = getComments($entryId);
+$comments = [];
+if(isset($_GET['eid'])) {
+    $comments = getComments($entryId);
+}
 
 
 ?>
