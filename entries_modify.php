@@ -15,8 +15,9 @@ if(getUserIdFromSession() != 0)
     }
   }
 
-  if(isset($_GET['eid']))
+  if(isset($_GET['eid']) && in_array(getEntry($_GET['eid']),getEntries(getUserIdFromSession())))
   {
+    //echo "<scipt>alert('".in_array($_GET['eid'],getEntries(getUserIdFromSession())[2])."')</script>";
     $eid = $_GET['eid'];
     $entry = getEntry($eid);
 
@@ -63,6 +64,8 @@ if(getUserIdFromSession() != 0)
     } else {
       echo "<h1 style='color:red;'>Fehler!\n Dieser Beitrag existiert nicht.</h1><br>";
     }
+  } else {
+    echo "<h1 style='color:red;'>Fehler!\n Dieser Beitrag existiert nicht oder du hast nicht die Berechtigung ihn zu bearbeiten.</h1><br>";
   }
 }
 
