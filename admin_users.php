@@ -76,34 +76,44 @@ if (isset($_SESSION['isAdmin'])) {
                             <button type="submit" class="btn btn-primary">Erstellen</button>
                         </form>
                         </li>
-                        <li class='list-group-item'>
-                            CSV
-                            <h3 style="font-size:90%;">Import</h3>
-                            <?php
-                            echo "<form action='".$_SERVER['PHP_SELF']."?function=csv_import' method='post' enctype='multipart/form-data'>
-                            <label for='file'>Datei:</label>
-                            <input type='file' name='fileToUpload' id='file'><br>
-                            <input type='submit' name='submit' value='Daten von Datei importieren'>
-                            </form>";
-                            ?>
-                            <h3 style="font-size:90%;">Export</h3>
-                            <h4 style="font-size:80%;color:grey;">Bestehende Datei</h4>
-                            <?php
-                            echo "<form action='".$_SERVER['PHP_SELF']."?function=csv_export' method='post' enctype='multipart/form-data'>
-                            <label for='file'>Datei:</label>
-                            <input type='file' name='fileToUpload' id='file'><br>
-                            <input type='submit' name='submit' value='Daten von Datenbank exportieren'>
-                            </form>";
-                            ?>
-                            <h4 style="font-size:80%;color:grey;">Datei erstellen</h4>
-                            <?php
-                            echo "<form action='".$_SERVER['PHP_SELF']."?function=csv_export' method='post' enctype='multipart/form-data'>
-                            <label for='file'>Datei:</label>
-                            <input type='text' name='fileNameToExportTo' id='file'><br>
-                            <input type='submit' name='submit' value='Daten von Datenbank exportieren'>
-                            </form>";
-                            ?>
-                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card" style="width: 50rem;">
+                <div class="card-header">
+                    CSV
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                      <li class='list-group-item'>
+                          <h3>Import</h3>
+                          <?php
+                          echo "<form style='font-size:80%;' action='".$_SERVER['PHP_SELF']."?function=csv_import' method='post' enctype='multipart/form-data'>
+                          <label for='file'>Datei:</label>
+                          <input type='file' name='fileToUpload' id='file'><br>
+                          <input type='submit' name='submit' value='Daten von Datei importieren'>
+                          </form>";
+                          ?>
+                          <br>
+                          <h3>Export</h3>
+                          <h3 style="font-size:90%;color:grey;font-weight:bold;">Bestehende Datei</h3>
+                          <?php
+                          echo "<form style='font-size:80%;' action='".$_SERVER['PHP_SELF']."?function=csv_export' method='post' enctype='multipart/form-data'>
+                          <label for='file'>Datei:</label>
+                          <input type='file' name='fileToUpload' id='file'><br>
+                          <input type='submit' name='submit' value='Daten von Datenbank exportieren'>
+                          </form>";
+                          ?>
+                          <br>
+                          <h3 style="font-size:90%;color:grey;font-weight:bold;">Datei erstellen</h3>
+                          <?php
+                          echo "<form style='font-size:80%;' action='".$_SERVER['PHP_SELF']."?function=csv_export' method='post' enctype='multipart/form-data'>
+                          <label for='file'>Datei:</label>
+                          <input type='text' name='fileNameToExportTo' id='file'><br>
+                          <input type='submit' name='submit' value='Daten von Datenbank exportieren'>
+                          </form>";
+                          ?>
+                      </li>
                     </ul>
                 </div>
             </div>
