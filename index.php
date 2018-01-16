@@ -94,7 +94,7 @@
       {
         if($_SESSION['isAdmin'] == "true"){
             echo "<a class='nav-item nav-link active'href='index.php?function=admin_blogs'>Benutzerblogs</a>";
-            echo "<a class='nav-item nav-link active'href='index.php?function=admin_users'>Benuzterverwaltung</a>";
+            echo "<a class='nav-item nav-link active'href='index.php?function=admin_users'>Benutzerverwaltung</a>";
 
         } else {
             echo "<a class='nav-item nav-link active'href='index.php?function=entries_member'>Beiträge anzeigen</a>";

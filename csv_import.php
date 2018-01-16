@@ -51,12 +51,14 @@ $csvFile = file($target_file);
     $counter += 1;
   }
   echo (string)$counter . " User hinzugefügt...<br>";
+  header("Location: ".$_SERVER['PHP_SELF']."?function=admin_users");
 }
+/*
   $url = $_SERVER['PHP_SELF'].'?function=csv_import';
 
   echo "<form action='".$url."' method='post' enctype='multipart/form-data'>
   <label for='file'>Datei:</label>
   <input type='file' name='fileToUpload' id='file'><br>
   <input type='submit' name='submit' value='Daten von Datei importieren'>
-  </form>";
+  </form>";*/
 ?>
