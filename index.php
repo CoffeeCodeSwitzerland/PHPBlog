@@ -22,7 +22,7 @@
       $currentUser = getCurrentUser();
       if ($currentUser != "") {
           if ($currentUser['role'] == 2) {
-              echo "<script>window.alert('You are now entering in the admin part of the blog \\nBE WARE OF YOU DOING');</script>";
+              echo "<script>window.alert('You are now entering in the admin part of the blog \\nBE AWARE OF YOU DOING');</script>";
               $_SESSION['isAdmin'] = "true";
           } else {
               $_SESSION['isAdmin'] = "false";
